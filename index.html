@@ -1,0 +1,114 @@
+
+<!--Bruker bare snippets for å lage dette-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!--Spesial font-->
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<!--Meste parten av koden skrives inne her-->
+<body>
+    <div class="container">
+        <div class="nav-wrapper">
+
+                <!--Div, gives you the ability to place componnents on the page-->
+                <!--a er hvordan man setter in lenke, og href er hvir den skal gå hen-->
+                <!--Har satt inn activate-nav-link siden vi vil ha understrek på home/about ettersom hvor vi er hen-->
+                <div class="leftside">
+                    <div class="nav-link-wrapper activate-nav-link">
+                        <a href="index.html">Home</a>
+                    </div>
+
+                    <div class="nav-link-wrapper">
+                        <a href="about.html">About</a>
+                    </div>
+
+                </div>
+
+                <div class="right-side">
+                    <div>DHARSHINI THARMARAJAN</div>
+                </div>
+        </div>
+        
+
+<!--Everything under navbar is supposed to be inside here-->
+        <div class="content-wrapper">
+            
+             <!-- Alle bildene-->
+            <div class="portfolio-items-wrapper">
+      
+               <!--Hvert bilde-->
+              <div class="portfolio-item-wrapper">
+                <div class="portfolio-img-background" style="background-image:url(images/portfolio1.jpg)"></div>
+      
+                <div class="img-text-wrapper">
+                  <div class="logo-wrapper">
+                    <a href="https://www.linkedin.com/in/dharshini-tharmarajan/">
+                    <img src="images/logos/linkedin.png" alt=""></a>
+                  </div>
+      
+                  <div class="subtitle">View my LinkedIn page.</div>
+                </div>
+              </div>
+      
+              <div class="portfolio-item-wrapper">
+                <div class="portfolio-img-background" style="background-image:url(images/portfolio2.jpg)"></div>
+                <div class="img-text-wrapper">
+                  <div class="logo-wrapper">
+                    <a href="https://www.github.com/dharshatha">
+                    <img src="images/logos/github.png" alt=""></a>
+                  </div>
+      
+                  <div class="subtitle">View my coding projects.</div>
+                </div>
+              </div>
+               
+              </div>
+              <div class="line">
+              </div>
+              <div class="footer">
+                <div class="footer-content"></div> 
+                <div class="footer-section about"></div>
+                <div class="footer-section-links"></div>
+                <div class="footer-section-contact-form"></div>
+                <div class="footer-bottom">
+                  © || Made by Dharshini Tharmarajan
+                </div>
+            </div>
+          </div>
+          
+        </div>   
+</body>
+<!--Usually want our page to load before the javascript is running over,
+and we have the js code at the bottom-->
+
+
+<!-- To tell html that you want to run a javascript, is by using script tags-->
+
+<script>
+/*Ønsker å få tilgang til når folk hover over selve bildet, må bruke js til å gjøre det. */
+  const portfolioItems = document.querySelectorAll('.portfolio-item-wrapper');
+  
+  portfolioItems.forEach(portfolioItem => {
+      portfolioItem.addEventListener('mouseover', () => {
+          console.log(portfolioItem.childNodes[1].classList)
+          portfolioItem.childNodes[1].classList.add('img-darken');
+  });
+  portfolioItem.addEventListener('mouseout', () => {
+      /*Nested divs*/
+      console.log(portfolioItem.childNodes[1].classList)
+      portfolioItem.childNodes[1].classList.remove('img-darken');
+  });
+});
+
+</script>
+</html>
+
+
+
+
+
+

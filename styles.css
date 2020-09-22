@@ -1,0 +1,259 @@
+body{
+    background-size: 100%;
+    background-origin: content;
+    background-repeat: no-repeat;
+    
+    /*Need to call our font*/
+    font-family: 'Gothic A1';
+    /*Remove default margin in body*/
+    margin: 0px;
+
+}
+
+
+/*GRID: */
+.container{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.right-side{
+    color: #fffdfd;
+}
+
+/*NAVBAR: */
+.nav-wrapper{
+    /*flex flytter navnet (brad) opp. 
+    Den tar dine elementer og setter ved siden ved andre, altså leftside og rightside */
+    display: flex;
+    /* Using all the all space we space rightside and leftsite */
+    justify-content: space-between;
+    padding: 38px;
+    background-color: #335384;
+
+}
+
+
+/* Flytte opp about slik at den ikke står under home*/
+.leftside{
+    display: flex;
+
+}
+
+/*Ved å skrive slik, kan vi gå inn i alle div 
+som tilhører leftside og endre på dem samtidig*/
+.nav-wrapper > .leftside > div {
+    /*gi mellomrom mellom tekstene*/
+    margin-right: 18px;
+    /*gjør teksten litt mindre*/
+    font-size:0.9rem;
+    
+}
+
+
+
+/*Gir dem animasjon på border-bottom, add a heigth*/
+.nav-link-wrapper{
+    height: 22px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.34s;
+}
+
+/*Inside the navlinkwrapper grab the a link, and add a color
+fjerner stygge underline, og heller bruker border-bottom med farge*/
+.nav-link-wrapper a{
+    color: #fffdfd;
+    text-decoration: none;
+    transition: color 0.34s;
+}
+
+/*Fortelle css, at når det er hover action */
+
+.nav-link-wrapper:hover{
+    border-bottom: 1px soliD #9ed5f5;
+}
+
+.nav-link-wrapper a:hover{
+    color: #9ed5f5;
+}
+
+/*Må */
+
+.activate-nav-link{
+    border-bottom: 1px solid #fffdfd;
+}
+
+.activate-nav-link a{
+    /*Bruker important for å override default settings. */
+    color: #fffdfd !important;
+
+}
+
+
+
+
+
+
+/*Portfolio styles*/
+.portfolio-items-wrapper {
+    /*Bruker grid igjen*/
+    display: grid;
+    /*Sier at vi skal ha 3 kolonner*/
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .portfolio-item-wrapper {
+      /*Gives us more flexibility with each of the items inside of the picture*/
+    position: relative;
+  }
+
+
+  .portfolio-img-background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
+    width: 100%;
+  }
+  
+
+
+
+  
+
+  /*Styling image background*/
+  .portfolio-img-background {
+    height: 350px;
+    width: 100%;
+    /*Make sure all pictures sit nicely to eachother, slik at de croppes riktig.*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /*skal fiske på bildeteksten*/
+  .img-text-wrapper{
+      /*Position relative is required if u want to use absolute*/
+      position: absolute;
+      /*Want to position it on the very top*/
+      top: 0;
+      /*Insid*e of it we want every element of img-text-wrapper use flexbox*/
+      display: flex;
+      flex-direction: column;
+      /*Want to center them right to left*/
+      justify-content: center;
+      /*Want to center them top to bottom*/
+      align-items: center;
+      height: 100%;
+      text-align: center;
+      padding-left: 100px;
+      padding-right: 100px;
+
+  }
+
+  /*Style the logo image on the picture*/
+
+  .logo-wrapper img{
+      width: 50%;
+  }
+
+  
+
+  /*We want to style the text, and will only change when hovering*/
+  .img-text-wrapper .subtitle{
+      transition: 0.5s;
+      /*Starting color should be transparent*/
+      color: transparent;
+      font-weight: 600;
+  }
+  .img-text-wrapper:hover .subtitle{
+      font-weight: 600;
+      color: #9ed5f5;
+  }
+
+  /*We gonna use javascript to run and remove this class, when someone is hovering over it. */
+  .img-darken {
+      transition: 0.5s;
+      filter: brightness(10%);
+
+  }
+
+
+  /*About page*/
+
+.two-column-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+}
+
+
+
+
+.profile-image-wrapper img {
+
+  width: 50%;
+  padding-left: 100px;
+  padding-top: 32px;
+  opacity: 0.5;
+}
+
+.profile-image-wrapper img:hover{
+    opacity: 1;
+}
+
+
+.profile-content-wrapper {
+  padding: 30px;
+}
+
+.profile-content-wrapper h1 {
+  color:  black;
+}
+
+.profile-content-wrapper h5 {
+    color:  black;
+  }
+
+.profile-content-wrapper p {
+    color:  black;
+  }
+
+.transbox{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 100px;
+    padding-bottom: 0%;
+
+    height: 300px;
+    background-color: white;
+    opacity: 0.7;
+}
+
+/*Footer*/
+
+.line{
+    background: #335384;
+    height: 30px;
+}
+
+.footer{
+    background:rgb(51, 46, 94);
+    color:  #fffdfd;
+    height: 100px;
+    position: relative; 
+}
+
+.footer .footer-bottom{
+    background: #142236;
+    height: 15px;
+    font-size: 10px;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+}
+
+
+
