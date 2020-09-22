@@ -255,5 +255,9 @@ fjerner stygge underline, og heller bruker border-bottom med farge*/
     left: 0px;
 }
 
+.footer .footer-bottom:hover{
+    font-size: 12px;
+}
+
 
 
